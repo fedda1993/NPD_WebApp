@@ -11,8 +11,8 @@ data_folder_raw = os.path.join(data_folder, 'raw')
 fp = os.path.join(data_folder_raw, 'field_production_yearly.csv')
 
 def get_data():
-        df = pd.read_csv(fp)
-
+        url = "http://hotell.difi.no/download/npd/field/production-yearly-by-field"
+        df = pd.read_csv(url, delimiter=";")
         return df
 
 
