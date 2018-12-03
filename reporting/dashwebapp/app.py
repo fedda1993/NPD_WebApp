@@ -32,15 +32,6 @@ df = processing.process_data(df)
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-df = pd.read_csv(
-    'field_production_yearly.csv'
-    )
-
-df = df.melt(
-    id_vars=['prfInformationCarrier', 'prfYear', 'prfNpdidInformationCarrier'],
-    value_vars=['prfPrdOilNetMillSm3', 'prfPrdGasNetBillSm3', 'prfPrdNGLNetMillSm3', 'prfPrdCondensateNetMillSm3', 'prfPrdOeNetMillSm3', 'prfPrdProducedWaterInFieldMillSm3']
-    )
-
 available_indicators = df['variable'].unique()
 
 app.layout = html.Div([
